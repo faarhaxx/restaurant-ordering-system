@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body{
+            background: linear-gradient(135deg, #f1fff4, #d9f7e3);
+            min-height:100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .dashboard-title{
+            font-size:45px;
+            font-weight:800;
+            color:#1b4332;
+        }
+
+        .stat-card{
+            background:white;
+            border-radius:22px;
+            padding:28px;
+            box-shadow:0 12px 35px rgba(0,0,0,0.10);
+            transition:0.3s;
+            height:100%;
+            border-left:6px solid #2d6a4f;
+        }
+
+        .stat-card:hover{
+            transform:translateY(-6px);
+        }
+
+        .icon{
+            font-size:42px;
+            margin-bottom:15px;
+        }
+
+        .number{
+            font-size:34px;
+            font-weight:800;
+            color:#2d6a4f;
+        }
+
+        .label{
+            color:#555;
+            font-size:17px;
+            font-weight:600;
+        }
+
+        .admin-btn{
+            background:#2d6a4f;
+            color:white;
+            border-radius:30px;
+            padding:12px 28px;
+            font-weight:700;
+            text-decoration:none;
+        }
+
+        .admin-btn:hover{
+            background:#1b4332;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <div>
+            <h1 class="dashboard-title">Admin Dashboard</h1>
+            <p class="text-muted fs-5">Restaurant orders and business overview</p>
+        </div>
+
+        <a href="/admin/" class="admin-btn">
+            Back to Admin
+        </a>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">📦</div>
+                <div class="number">{{ total_orders }}</div>
+                <div class="label">Total Orders</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">💰</div>
+                <div class="number">₹{{ total_revenue }}</div>
+                <div class="label">Total Revenue</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">🍔</div>
+                <div class="number">{{ total_foods }}</div>
+                <div class="label">Food Items</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">📩</div>
+                <div class="number">{{ total_messages }}</div>
+                <div class="label">Contact Messages</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">🟡</div>
+                <div class="number">{{ pending_orders }}</div>
+                <div class="label">Pending Orders</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">👨‍🍳</div>
+                <div class="number">{{ preparing_orders }}</div>
+                <div class="label">Preparing Orders</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">🚚</div>
+                <div class="number">{{ out_delivery_orders }}</div>
+                <div class="label">Out For Delivery</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">✅</div>
+                <div class="number">{{ delivered_orders }}</div>
+                <div class="label">Delivered Orders</div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+            <div class="stat-card">
+                <div class="icon">❌</div>
+                <div class="number">{{ cancelled_orders }}</div>
+                <div class="label">Cancelled Orders</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
