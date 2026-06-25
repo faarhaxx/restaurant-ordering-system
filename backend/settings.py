@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i5dukr8zj@9n*nr-3t8u8awisq+s75v!luqlz&j7)7ne94y$l('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -32,12 +32,17 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'jazzmin',
+
+    'cloudinary_storage',
+    'cloudinary',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'accounts',
     'menu',
     'orders',
@@ -155,3 +160,11 @@ JAZZMIN_SETTINGS = {
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "Restoran <noreply@restoran.com>"
+
+import cloudinary
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dgsmhb6d4',
+    'API_KEY': '351574445432968',
+    'API_SECRET': 'TYat7nfl3ajGKGtyUZqC1H-Tf2o',
+}
